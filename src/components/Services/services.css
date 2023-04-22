@@ -1,0 +1,105 @@
+img{
+    max-width: 100%;
+    display: block;
+}
+.services-contents{
+    --_button-size: 3rem;
+    --_panel-padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    contain: content;
+}
+.services-panel{
+    position: relative;
+    isolation: isolate;
+    flex-basis: 4rem;
+    overflow: hidden;
+    padding: var(--_panel-padding);
+    border-radius: 2rem;
+    transition: flex-basis 1000ms ease;
+    height: 75vh;
+    cursor: pointer;
+}
+.services-panel:has(button.activepanel){
+    flex-basis: clamp(25rem,40vh,20rem);
+    flex-grow: 1;
+}
+.services-image{
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: filter 500ms ease;
+}
+.services-panel:has(button.activepanel) .services-image{
+    filter: brightness(50%);
+    transition-delay: 250ms;
+}
+.services-icon{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    position: absolute;;
+    top: 1rem;
+    left: .5rem;
+}
+.services-panel:has(button.activepanel) .services-icon{
+    position: static;
+}
+button{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    background: transparent;
+    border: 0;
+    font-size: 1.6rem;
+
+}
+span{
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+.services-panel:has(button.activepanel) span{
+    opacity: 1;
+    transition-delay: 250ms;
+}
+.services-content > p{
+    transform: translateY(2rem);
+    opacity: 0;
+    transition: opacity 500ms ease;
+    
+}
+.services-panel:has(button.activepanel) p{
+    opacity: 1;
+    transition-delay: 500ms;
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+    .services-panel{
+        height: 60vh;
+    }
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+
+    .services-contents{
+        flex-direction: column;
+    }
+    button{
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 1rem;
+        padding: 1px 1rem 1px;
+    }
+    span{
+        opacity: 1;
+    }
+    .services-icon{
+        position: static ;
+    }
+}

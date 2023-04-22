@@ -1,0 +1,50 @@
+.container.testimonials__container{
+    width: 40%;
+}
+img{
+    aspect-ratio: 1/1;
+}
+.review-img{
+    width: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    border: 0.8rem solid var(--clr-1);
+}
+.review__contents{
+    text-align: center;
+    background: var(--clr-3);
+    border-radius: 1.2rem;
+    min-height: 12.5rem !important;
+    max-height: 100%;
+    margin: 0.5rem auto 2rem;
+    cursor: default;
+    user-select: none;
+}
+.review-name{
+    color: var(--text--color-primary);
+}
+.review-p{
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0 auto 1rem;
+    width: 90%;
+}
+.swiper-pagination-bullet-active-prev,
+.swiper-pagination-bullet-active-next {
+    background: var(--clr-4) !important;
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+    .container.testimonials__container {
+        width: 60%;
+    }
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+    .container.testimonials__container {
+        width: var(--container-width-sm);
+    }
+}

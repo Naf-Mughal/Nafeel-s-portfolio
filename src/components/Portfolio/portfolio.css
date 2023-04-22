@@ -1,0 +1,237 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+.container.portfolio__container{
+    gap: 1.2rem;
+    width: 64rem;
+    height: 34rem;
+    border-radius: 4rem;
+    background: var(--clr-2);
+    position: relative;
+    z-index: 1;
+    border-radius: 4rem;
+}
+
+.portfolio-fg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: var(--clr-1);
+    width: 62rem;
+    height: 32rem;
+    inset: 0.5rem;
+    z-index: 2;
+    border-radius: 4rem;
+  }
+
+.portfolio-card {
+    width: 63rem;
+    height: 33rem;
+    position: absolute;
+    inset: 0.5rem;
+    z-index: 1;
+  }
+  
+  .portfolio-card::before,
+  .portfolio-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: 4rem;
+    animation: rotation 20s linear infinite;
+  }
+  .portfolio-card::after {
+    filter: blur(1rem);
+  }
+  
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+
+.portfolio__contents{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem 1rem;
+    width: max-content;
+    height: max-content;
+    z-index: 10;
+}
+.portfolio__item{
+    position: relative;
+    width: 10rem;
+    margin: 0;
+    max-height: 12rem;
+}
+.portfolio__item-front{
+    background: rgba(0,0,0,0.7);
+    padding: 1rem;
+    border-radius: 1.2rem;
+    cursor:default;
+}
+.front-img{
+    max-width: 100%;
+    aspect-ratio: 1 / 1.2;
+    border-radius: 1.2rem;
+}
+.front-itemid{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    background:rgba(0,0,0,0.7) ;
+    padding: 0.5rem 0.5rem 0.75rem;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 80%, 2% 100%);
+}
+.portfolio__item:hover .front-itemid{
+    opacity: 0;
+}
+.portfolio__item:hover .portfolio__item-front{
+    text-align: center;
+    font-size: 1.5rem;
+    transform: translateY(-45%) scale(0.55,0.7);
+    transition: transform 250ms ease;
+    background: none;
+    border-radius: 0;
+}
+.portfolio__item-back{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+    cursor: default;
+    pointer-events: none;
+}
+.portfolio__item-back a:hover{
+    color: white;
+}
+.back-description{
+    font-size: 0.7rem;
+    margin: 5px 2px 2px;
+}
+.back-btn{
+    color: white;
+    background: rgb(31, 88, 255);
+    border-width: max-content;
+    padding: 0.2em 0.5em;
+    border: 1px solid rgb(31, 88, 255);
+    border-radius: 1em;
+    margin: 2px;
+    scale: 0.85;
+}
+.back-socials{
+    padding: 0.2em 1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    scale: 0.85;
+    gap: 1.2rem;
+}
+.back-social{
+    padding: 0.2em 0.5em;
+    border: 1px solid rgb(31,88,255);
+    border-radius: 1em;
+    margin: 2px;
+}
+.portfolio__item:hover .portfolio__item-back{
+    opacity: 1;
+    pointer-events: auto;
+}
+.portfolio__item-background{
+    position: absolute;
+    inset: 0;
+    background: black;
+    scale: 0.11 0.115;
+    z-index: -1;
+    opacity: 0;
+    border-radius: 0.4rem;
+    max-height: 11.5rem;
+    overflow: hidden;
+}
+.back-itemid{
+    position: absolute;
+    top: -0.5rem;
+    right: 0.2rem;
+    scale: 0.7;
+    background:rgba(0,0,0,0.7) ;
+    padding: 0.5rem 0.5rem 0.75rem;
+    opacity: 0;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 80%, 2% 100%);
+    z-index: 2;
+}
+.portfolio__item:hover .back-itemid{
+    opacity: 1;
+}
+.back-img{
+    width: 100%;
+    height: 30%;
+    border: 1px solid transparent;
+    border-radius:0 0 0.4em 0.4em;
+}
+.portfolio__item:hover .back-img{
+    filter: brightness(70%) ;
+}
+.portfolio__item:hover .portfolio__item-background{
+    scale: 1.15 1.35;
+    opacity: 1;
+    transition: opacity 250ms linear, scale 250ms ease-in-out;
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+    .container.portfolio__container{
+        width: 90%;
+    }
+    .portfolio-card{
+        width: 98%;
+    }
+    .portfolio-fg{
+        width: 98%;
+    }
+
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+    .container.portfolio__container{
+        width: 90%;
+        height: 48rem;
+    }
+    .portfolio-card{
+        width: 96%;
+        height: 98%;
+    }
+    .portfolio-fg{
+        width: 96%;
+        height: 98%;
+    }
+    .portfolio__contents{
+        scale: 0.9;
+        grid-template-columns: 1fr 1fr;
+    }
+    .portfolio__item{
+        width: 100%;
+    }
+}

@@ -1,0 +1,98 @@
+.about__container{
+    display: grid;
+    gap: 15%;
+    grid-template-columns: 35% 50%;
+}
+.about{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg,transparent,var(--color-primary) ,transparent) ;
+    display: grid;
+    place-items: center;
+}
+.about img{
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(15deg);
+    transition: var(--transition);
+}
+.about img:hover{
+    transform: rotate(0deg);
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.4rem;
+}
+.card{
+    border-radius: 1rem;
+    text-align: center;
+    padding: 2rem;
+    transition: var(--transition);
+}
+.contents .icon{
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    transition: var(--transition);
+    margin-bottom: 2rem;
+}
+.card .icon:hover{
+    color: var(--text-color-white);
+}
+.card h5{
+    font-size: 0.9rem;
+
+}
+.card small{
+    color: var(--text-color-light);
+    font-size: 0.7rem;
+}
+.contant-about{
+    margin: 1rem 0 2.4rem;
+}
+.contant-about p{
+    margin: 2rem 0 1rem;
+    color: var(--text-ccolor-light);
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+    .about__container{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .about{
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+    .contant-about p{
+        margin: 2rem auto 1.2rem;
+    }
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+    .about{
+        width: 60%;
+        margin: 0 auto 3rem;;
+    }
+    .cards{
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .card{
+        margin: 2rem 0 1rem;
+    }
+    .contents{
+        text-align: center;
+    }
+    .contant-about p{
+        margin: 2rem 0;
+    }
+
+
+}

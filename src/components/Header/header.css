@@ -1,0 +1,120 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .me{
+    width: 24rem;
+    height: 24rem;
+    position: absolute;
+    inset: 0;
+    background: var(--clr-1);
+    left: calc(50% - 11.5rem);
+    margin-top: 4rem;
+    position: relative;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  .me-card {
+    width: 23rem;
+    height: 23rem;
+    position: absolute;
+    inset: 0;
+    left: calc(50% - 11.5rem);
+    margin-top: 0.5rem;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  .me-card::before,
+  .me-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+  }
+  .me-card::after {
+    filter: blur(1.5rem);
+  }
+  
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+
+header{
+    height: 100vh;
+    padding-top: 6rem;
+    overflow: hidden;
+}
+.header__container{
+    text-align: center ;
+    height: 100%;
+    position: relative;
+}
+.cta{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+/********************************Header Socials ********************************/
+.header__socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+.header__socials::after{
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--bg--color-primary);
+}
+/********************************Header Image ********************************/
+.image{
+    margin: 0.5rem;
+    width: 22rem;
+    height: 22rem;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    overflow: hidden;
+}
+.scroll__down{
+    position: absolute;
+    right: -2.4rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+    header{
+        height: 70vh;
+    }
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+    header{
+        height: 100vh;
+    }
+    .header__socials,.scroll__down{
+        display:none;
+    }
+}

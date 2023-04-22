@@ -1,0 +1,60 @@
+.container.contact__container{
+    display: flex;
+    justify-content: center;
+}
+.contact-js{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    color: var(--text--color-white);
+    height: 30rem;
+    width: 30rem;
+    padding: 2rem 3rem;
+    border-radius: 1.2rem;
+    position: relative;
+}
+.contact-js form input,
+.contact-js form input:is(:hover,:focus),
+.contact-js form textarea,
+.contact-js form textarea:is(:hover,:focus){
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-color-white);
+    margin: 1rem auto;
+    font-size: 1rem;
+    border-radius: 1rem;
+    resize: none;
+}
+.contact-js form input::placeholder,.contact-js form textarea::placeholder{
+    color: var(--text-color-white);
+}
+.contact-btn{
+    position: absolute;
+    bottom: 0;
+    right: 3rem;
+    width: 8rem !important;
+    border-radius: 4rem !important;
+    background-color: var(--bg--color-secondary) !important;
+    transition: all 250ms ease;
+}
+.contact-btn:hover{
+    background-color: white !important;
+    color: var(--bg--color-secondary);
+}
+/* --------------------------------Medium Devices --------------------------------*/
+@media screen and (max-width:1024px){
+}
+
+/* --------------------------------Small Devices --------------------------------*/
+@media screen and (max-width:600px){
+    .contact-js{
+        width:90%
+    }
+    .contact-btn{
+        margin-left: 30% !important;
+    }
+}
