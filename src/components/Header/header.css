@@ -112,7 +112,7 @@ header{
 /* --------------------------------Small Devices --------------------------------*/
 @media screen and (max-width:600px){
     header{
-        height: 150vh;
+        height: 120vh;
         width: 90%;
         margin: 0 auto;
     }
