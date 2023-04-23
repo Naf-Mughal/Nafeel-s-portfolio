@@ -114,6 +114,7 @@ header{
     header{
         height: 150vh;
         width: 90%;
+        margin: 0 auto;
     }
     .header__socials,.scroll__down{
         display:none;
