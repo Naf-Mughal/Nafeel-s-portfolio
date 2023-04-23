@@ -113,8 +113,18 @@ header{
 @media screen and (max-width:600px){
     header{
         height: 100vh;
+        width: 90%;
     }
     .header__socials,.scroll__down{
         display:none;
+    }
+        .me{
+      width: 100%;
+    }
+    .me-card{
+      width: 98%;
+    }
+    .image{
+      width: 98%;
     }
 }
