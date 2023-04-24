@@ -105,20 +105,23 @@ header{
 /* --------------------------------Medium Devices --------------------------------*/
 @media screen and (max-width:1024px){
     header{
-        height: 70vh;
+        height: 90vh;
     }
 }
 
 /* --------------------------------Small Devices --------------------------------*/
 @media screen and (max-width:600px){
     header{
-        height: 120vh;
+        height: 110vh;
+        margin: 0 auto;
     }
     .header__socials,.scroll__down{
         display:none;
     }
         .me{
       scale: 0.9;
+      left: calc(50% - 10.8rem);
+      transform: translateX(-1.344rem);
     }
     .me-card{
       scale: 0.9;
@@ -126,4 +129,24 @@ header{
     .image{
       scale: 0.9;
     }
+}
+@media screen and (max-width:300px){
+  header{
+      height: 110vh;
+      margin: 0 auto;
+  }
+  .header__socials,.scroll__down{
+      display:none;
+  }
+      .me{
+    scale: 0.7;
+    left: calc(50% - 8.4rem);
+    transform: translateX(-5.2rem);
+  }
+  .me-card{
+    scale: 0.9;
+  }
+  .image{
+    scale: 0.9;
+  }
 }
