@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Nafeel-s-portfolio/static/css/main.9fd08e5a.css",
+    "main.css": "/Nafeel-s-portfolio/static/css/main.c159916d.css",
     "main.js": "/Nafeel-s-portfolio/static/js/main.d8136c94.js",
     "static/media/Nafeel.jpg": "/Nafeel-s-portfolio/static/media/Nafeel.f6ca0d470e1fd75f06d1.jpg",
     "static/media/me.jpg": "/Nafeel-s-portfolio/static/media/me.8c48ee1bd2956009b126.jpg",
@@ -11,11 +11,11 @@
     "static/media/Content.jpg": "/Nafeel-s-portfolio/static/media/Content.62adb2a01b0db1967750.jpg",
     "index.html": "/Nafeel-s-portfolio/index.html",
     "static/media/Cv.pdf": "/Nafeel-s-portfolio/static/media/Cv.31d6cfe0d16ae931b73c.pdf",
-    "main.9fd08e5a.css.map": "/Nafeel-s-portfolio/static/css/main.9fd08e5a.css.map",
+    "main.c159916d.css.map": "/Nafeel-s-portfolio/static/css/main.c159916d.css.map",
     "main.d8136c94.js.map": "/Nafeel-s-portfolio/static/js/main.d8136c94.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fd08e5a.css",
+    "static/css/main.c159916d.css",
     "static/js/main.d8136c94.js"
   ]
 }
